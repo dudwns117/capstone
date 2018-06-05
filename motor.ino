@@ -6,8 +6,8 @@ Servo servoMain; // Define our Servo
 int val = 1000;
 int i = 0;
 int flag=1;
-const char* ssid = "capde5";
-const char* pass = "cse55555";
+const char* ssid = "mine";
+const char* pass = "alsrnalsrn";
 const char* host = "maker.ifttt.com"; 
 String ApiKey = "cY9eJKG56s3uce7M-aEeQi";
 String path = "/trigger/hot_temp/with/key/" + ApiKey + "/?value1=";  
@@ -77,9 +77,10 @@ void loop()
       servoMain.write(i-10);
       delay(45);
     }
-    Serial.print("jotgatne");
+    //Serial.print("jotgatne");
+    digitalWrite(relay, HIGH);
+    delay(3000);
     digitalWrite(relay, LOW);
-    delay(9876);
     WiFiClient client;
   const int httpPort = 80;
   if (!client.connect(host, httpPort)) {
@@ -93,6 +94,9 @@ void loop()
   //delay(5000);
     
     servoMain.detach();
+    //delay(5000);
+    //val = 0;
+    //servoMain.attach(10);
   }
 
 }
